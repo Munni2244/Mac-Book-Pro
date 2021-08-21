@@ -17,7 +17,7 @@ const totalvalue= bestPrice + totalCostValue;
 total.innerText=totalvalue;
 
 }
-// memory button /////////
+// /////////memory button /////////
 document.getElementById('memory1-btn').addEventListener('click', function(){
 memoryCost.innerText='0';
     getTotalCost('memory');
@@ -29,7 +29,7 @@ memoryCost.innerText='180';
     getUpdateTotal('memory')
    });
 
-//  storage button ///////
+//  ////////////storage button //////////////
 document.getElementById('storage1-btn').addEventListener('click', function(){
 storageCost.innerText='0';
     getTotalCost('storage');
@@ -47,7 +47,7 @@ storageCost.innerText='180';
    });
 
 
-//    delivery button /////////
+//  /////////////  delivery button /////////
 document.getElementById('delivery1-btn').addEventListener('click', function(){
 deliveryCost.innerText='0';
 getTotalCost('delivery');
@@ -61,7 +61,7 @@ getUpdateTotal('delivery')
  });
 
 
-////// update bounas part //////////
+////////////update bounas part //////////
 
 function getUpdateTotal(items){
     const updateValue=document.getElementById(items+'-cost');
@@ -74,4 +74,22 @@ function getUpdateTotal(items){
     
     }
 
+///////////////pomo code//////////////////
+
+function getPomoCode(){
+const updatePomoNUmber= document.getElementById('update-total');
+const UpdatePomoValue = parseFloat(updatePomoNUmber.innerText);
+const pomoCodeValue = document.getElementById('pomo-input');
+const pomoCode= pomoCodeValue.value;
+if(pomoCode=='stevekaku'){
+    updatePomoNUmber.innerText= UpdatePomoValue/20;
+    
+}
+pomoCodeValue.value='';
+
+}
+
+document.getElementById('apply-btn').addEventListener('click', function(){
+    getPomoCode();
+})
 

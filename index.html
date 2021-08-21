@@ -14,6 +14,7 @@
        <section>
         <div class="row">
             <div class="col-sm-6">
+              <!--/// img //// -->
               <div class="p-5">
                 <img width="400px" src="images/mac.png" alt="" id="img">
               </div>
@@ -42,7 +43,8 @@
                   <button id="delivery1-btn" class="btn border-primary p-1">Friday, Aug 25 FREE Prime Delivery</button>
                   <button id="delivery2-btn" class="btn border-primary p-1 ms-2">Friday, Aug 21 Delivery charge $20</button>
               </div>
-
+             
+              <!--///// calculation part//// -->
               <div class="d-flex">
                   <h6 class="me-5">Best Price</h6>
                   <h6 class="ms-5 ">$ <span id="best-price">1299</span></h6>
@@ -65,12 +67,14 @@
                   <h6 class="me-5">Total Price</h6>
                   <h6 class="ms-5">$<span id="total-cost">1299</span></h6>
               </div>
+
+              <!--/// pomo code cupon/// -->
               <div class="my-3">
-                <h6>Add promo code</h6>
+                <h6>Add pomo code</h6>
                 <div class="d-flex">
        
-                  <input class="form-control w-25 me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <input id="pomo-input" class="form-control w-25 me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button id="apply-btn" class="btn bg-danger btn-outline-success" type="submit">Apply</button>
                 </div>
               </div>
             </div>
