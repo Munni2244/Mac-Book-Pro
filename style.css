@@ -1,4 +1,7 @@
 #img{
     margin-left: 100px;
 }
-
+.button:hover{
+background-color: rgb(7, 35, 43);
+color: white;
+}

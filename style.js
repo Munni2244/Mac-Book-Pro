@@ -15,17 +15,37 @@ const bestPriceValue= document.getElementById('best-price');
 const bestPrice=parseInt(bestPriceValue.innerText);
 const totalvalue= bestPrice + totalCostValue;
 total.innerText=totalvalue;
+}
+
+ //////////total cost///////////////////
+function getTotal(){
+const total =document.getElementById('total-cost');
+const bestPriceValue= document.getElementById('best-price');
+const bestPrice=parseInt(bestPriceValue.innerText);
+const memoryNumber= document.getElementById('memory-cost');
+const memmoryValue = parseInt(memoryNumber.innerText);
+const storageNumber= document.getElementById('storage-cost');
+const storageValue = parseInt(storageNumber.innerText);
+const deliveryNumber= document.getElementById('delivery-cost');
+const deliveryValue = parseInt(deliveryNumber.innerText);
+const totalCost= bestPrice + memmoryValue+ storageValue + deliveryValue;
+total.innerText= totalCost;
 
 }
+
+
+
 // /////////memory button /////////
 document.getElementById('memory1-btn').addEventListener('click', function(){
 memoryCost.innerText='0';
     getTotalCost('memory');
+    getTotal()
     getUpdateTotal('memory')
    });
 document.getElementById('memory2-btn').addEventListener('click', function(){
 memoryCost.innerText='180';
     getTotalCost('memory');
+    getTotal()
     getUpdateTotal('memory')
    });
 
@@ -33,16 +53,19 @@ memoryCost.innerText='180';
 document.getElementById('storage1-btn').addEventListener('click', function(){
 storageCost.innerText='0';
     getTotalCost('storage');
+    getTotal()
     getUpdateTotal('storage')
    });
 document.getElementById('storage2-btn').addEventListener('click', function(){
 storageCost.innerText='100';
     getTotalCost('storage');
+    getTotal()
     getUpdateTotal('storage')
    });
 document.getElementById('storage3-btn').addEventListener('click', function(){
 storageCost.innerText='180';
     getTotalCost('storage');
+    getTotal()
     getUpdateTotal('storage')
    });
 
@@ -51,39 +74,44 @@ storageCost.innerText='180';
 document.getElementById('delivery1-btn').addEventListener('click', function(){
 deliveryCost.innerText='0';
 getTotalCost('delivery');
+getTotal()
 getUpdateTotal('delivery')
  });
 
  document.getElementById('delivery2-btn').addEventListener('click', function(){
  deliveryCost.innerText='20';
  getTotalCost('delivery');
+ getTotal()
  getUpdateTotal('delivery')
  });
 
 
-////////////update bounas part //////////
+//////////update bounas part //////////
+function getUpdateTotal(){
+    const totalUpdate =document.getElementById('update-total');
+    const bestPriceValue= document.getElementById('best-price');
+    const bestPrice=parseInt(bestPriceValue.innerText);
+    const memoryNumber= document.getElementById('memory-cost');
+    const memmoryValue = parseInt(memoryNumber.innerText);
+    const storageNumber= document.getElementById('storage-cost');
+    const storageValue = parseInt(storageNumber.innerText);
+    const deliveryNumber= document.getElementById('delivery-cost');
+    const deliveryValue = parseInt(deliveryNumber.innerText);
+    const totalCost= bestPrice + memmoryValue+ storageValue + deliveryValue;
+    totalUpdate.innerText= totalCost; 
+}
 
-function getUpdateTotal(items){
-    const updateValue=document.getElementById(items+'-cost');
-    const totalUpdateValue=parseInt(updateValue.innerText);
-    const updatePriceValue= document.getElementById('best-price');
-    
-    const updatePrice=parseInt(updatePriceValue.innerText);
-    const totalUpdate= updatePrice + totalUpdateValue;
-    totalUpdatePrice.innerText=totalUpdate;
-    
-    }
 
 ///////////////pomo code//////////////////
 
 function getPomoCode(){
 const updatePomoNUmber= document.getElementById('update-total');
-const UpdatePomoValue = parseFloat(updatePomoNUmber.innerText);
+const UpdatePomoValue = parseInt(updatePomoNUmber.innerText);
 const pomoCodeValue = document.getElementById('pomo-input');
 const pomoCode= pomoCodeValue.value;
 if(pomoCode=='stevekaku'){
-    updatePomoNUmber.innerText= UpdatePomoValue/20;
-    
+    const pomoValue= (UpdatePomoValue*(20/100));
+    updatePomoNUmber.innerText= UpdatePomoValue-pomoValue;
 }
 pomoCodeValue.value='';
 
